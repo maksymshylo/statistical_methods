@@ -1,11 +1,48 @@
 # Statistical Methods of Pattern Recognition
-Laboratory work from the university course.
+
+**Table of contents**
+
+- [Lab 1. Recognition of a noisy string](#lab-1--recognition-of-a-noisy-image)
+- [Lab 2. Recognition of black vertical and horizontal lines](#lab-2--recognition-of-black-vertical-and-horizontal-lines)
+- [Lab 3. Gibbs Sampler for recognizing a noisy string over another one](#lab-3--gibbs-sampler-for-recognizing-a-noisy-string-over-another-one)
 
 
-## Lab 1 - Recognition of a noised image.
+**Mathematical solutions for the course**
+
+- [solutions.pdf](solutions.pdf)
+
+## Acknowledgements
+
+We sincerely thank the course instructors 
+Valerii Krygin ([definability](https://github.com/definability)) and 
+Michail I. Schlesinger for their dedication, passion,
+and high-quality support throughout the course.
+
+## Setup
+
+To run these applications, you need to have **Python3.12**.
+
+1. Clone repo
+
+2. Create virtual environment.
+    ```bash
+    python3.12 -m venv .venv
+    ```
+
+3. Activate it
+    ```bash
+    source .venv/bin/activate
+    ```
+
+4. Install requirements:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+## Lab 1 – Recognition of a noisy image
 
 ### Description
-> The program converts a string to noised image and then decodes it.
+> The program converts a string to a noisy image and then decodes it.
 
 ### Usage
 ```commandline
@@ -22,13 +59,14 @@ options:
 ```
 
 ### Examples
+
 ```bash
 python3 lab1/decode_string.py --input_string "billy herrington" --noise_level 0.35 --seed 45
 ```
 Decoded string:  "billy herrington"
 
-| Original image                        |           Noised image           | Decoded image                     |
-|---------------------------------------|:--------------------------------:|-----------------------------------|
+| Original image                        |              Noisy image               | Decoded image                     |
+|---------------------------------------|:--------------------------------------:|-----------------------------------|
 | ![](.imgs/lab1/test1/input_image.png) | ![](.imgs/lab1/test1/noised_image.png) | ![](.imgs/lab1/test1/decoded_image.png) |
 
 ```bash
@@ -36,16 +74,16 @@ python3 lab1/decode_string.py --input_string "van darkholme" --noise_level 0.45 
 ```
 Decoded string:  "nde deauff sc"
 
-| Original image                        |              Noised image              | Decoded image                           |
+| Original image                        |              Noisy image               | Decoded image                           |
 |---------------------------------------|:--------------------------------------:|-----------------------------------------|
 | ![](.imgs/lab1/test2/input_image.png) | ![](.imgs/lab1/test2/noised_image.png) | ![](.imgs/lab1/test2/decoded_image.png) |
 
 
-## Lab 2 - Recognition of black vertical and horizontal lines
+## Lab 2 – Recognition of black vertical and horizontal lines
 
 ### Description
-> The program creates an image with black vertical and horizontal lines,
-> apply bernoulli noise, and denoise it.
+> The program generates an image with black vertical and horizontal lines,
+> apply Bernoulli noise, and denoise it.
 
 ##### `Gibbs Sampling`
 
@@ -76,7 +114,7 @@ options:
 > 
 > **row accuracy 99.6**
 
-| Original image                                                    |                           Noised image                            | Decoded image                                                     |
+| Original image                                                    |                            Noisy image                            | Decoded image                                                     |
 |-------------------------------------------------------------------|:-----------------------------------------------------------------:|-------------------------------------------------------------------|
 | ![](.imgs/lab2/gibbs-sampler-test/input_image_gibbs_sampler.png)  | ![](.imgs/lab2/gibbs-sampler-test/noised_image_gibbs_sampler.png) | ![](.imgs/lab2/gibbs-sampler-test/output_image_gibbs_sampler.png) |
 
@@ -108,13 +146,13 @@ options:
 > 
 > **row accuracy 99.2**
 
-| Original image                                                  |                          Noised image                          | Decoded image                                                  |
+| Original image                                                  |                          Noisy image                           | Decoded image                                                  |
 |-----------------------------------------------------------------|:--------------------------------------------------------------:|----------------------------------------------------------------|
 | ![](.imgs/lab2/precise-solution-test/input_image_precise.png)   | ![](.imgs/lab2/precise-solution-test/noised_image_precise.png) | ![](.imgs/lab2/precise-solution-test/output_image_precise.png) |
 
 
 
-## Lab 3 - Gibbs Sampler for recognizing a noised string over another one
+## Lab 3 – Gibbs Sampler for recognizing a noisy string over another one
 
 > Note: Lengths of string should be the same.
 
@@ -156,7 +194,7 @@ The first decoded string:  deliver
 The second decoded string:  reviled
 ```
 
-| Input string over string image               | Noised string over string image                     | Decoded string 1                          |             Decoded string 2              |
+| Input string over string image               | Noisy string over string image                      | Decoded string 1                          |             Decoded string 2              |
 |----------------------------------------------|-----------------------------------------------------|-------------------------------------------|:-----------------------------------------:|
 | ![](.imgs/lab3/test1/string_over_string.png) | ![](.imgs/lab3/test1/string_over_string_noised.png) | ![](.imgs/lab3/test1/output_string_1.png) | ![](.imgs/lab3/test1/output_string_2.png) |
 
@@ -197,7 +235,7 @@ The first decoded string:  hello||||
 The second decoded string:  world
 ```
 
-| Input string over string image               | Noised string over string image                     | Decoded string 1                          |             Decoded string 2              |
+| Input string over string image               | Noisy string over string image                      | Decoded string 1                          |             Decoded string 2              |
 |----------------------------------------------|-----------------------------------------------------|-------------------------------------------|:-----------------------------------------:|
 | ![](.imgs/lab3/test2/string_over_string.png) | ![](.imgs/lab3/test2/string_over_string_noised.png) | ![](.imgs/lab3/test2/output_string_1.png) | ![](.imgs/lab3/test2/output_string_2.png) |
 
@@ -219,22 +257,7 @@ serif <=> fires
 steel <=> leets
 ````
 
-## Setup
+## Authors
 
-To run these applications, you need to have **Python3.12**.
-
-1. Clone repo:
-
-2. Create virtual environment.
-    ```bash
-    python3.12 -m venv .venv
-    ```
-3. Activate it
-    ```bash
-    source .venv/bin/activate
-    ```
-
-4. Install requirements:
-    ```bash
-    pip install -r requirements.txt
-    ```
+- Maksym Shylo ([@maksymshylo](https://github.com/maksymshylo))
+- Ruslan Khomenko ([@Ruslan3584](https://github.com/Ruslan3584))
